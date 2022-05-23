@@ -1,0 +1,14 @@
+How to install VMware Workstation on KALI
+Download the VMware Workstation for Linux
+sudo ./name of the vmware file
+You will get an error "VMWare Player 15.5.1 - cannot start GUI - vmmon cannot be installed"
+Excute the following commands
+
+sudo wget https://github.com/mkubecek/vmware-host-modules/archive/player-16.2.0.tar.gz
+tar -xzf player-16.2.0.tar.gz
+cd vmware-host-modules-player-16.2.0
+tar -cf vmmon.tar vmmon-only
+tar -cf vmnet.tar vmnet-only
+sudo cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/
+sudo vmware-modconfig --console --install-all
+sudo /etc/init.d/vmware restart
