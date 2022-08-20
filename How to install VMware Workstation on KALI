@@ -12,3 +12,6 @@ tar -cf vmnet.tar vmnet-only
 sudo cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/
 sudo vmware-modconfig --console --install-all
 sudo /etc/init.d/vmware restart
+
+Uninstall Vmware Player
+vmware-installer -u vmware-player
